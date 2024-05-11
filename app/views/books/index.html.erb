@@ -13,7 +13,9 @@
         <% @books.each do |book| %>
         <td><span><%=link_to book.title,book_path(book.id) %></span></td>
         <td><span><%= link_to book.body,book_path(book.id) %></span></td>
-        <td></td>
+        <td>
+          <%= link_to "削除",books_destroy_path(book.id), method: :delete, "data-confirm" =>"本当に削除しますか?" %>
+        </td>
         <% end %>
       </tr>
   　</tbody>
